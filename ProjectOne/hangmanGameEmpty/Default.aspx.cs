@@ -47,12 +47,12 @@ namespace hangmanGameEmpty
             Panel2.Visible = true;
 
 
-            for(int i=0; i<wordLength; i+=1)
-                {
-                guessDisplay[i] = "_\t";
+            for (int i = 0; i < wordLength; i += 1)
+            {
+                guessDisplay[i] = "_     ";
                 guessedLetters.Text += guessDisplay[i];
-                }
-               }
+            }
+        }
 
         protected void guessButton_Click(object sender, EventArgs e)
         {
@@ -73,8 +73,9 @@ namespace hangmanGameEmpty
                     {
 
                         answerCheck[i] = answerChars[i];
-                        guessDisplay[i] = "AAA";
-                        
+                        guessDisplay[i] = guess.Text + "     ";
+                        guessedLetters.Text = Convert.ToString(guessDisplay);
+
                     }
                 }
             }
@@ -107,14 +108,14 @@ namespace hangmanGameEmpty
                     guessCheck = false;
                 }
             }
-                        
+
             else
             {
 
                 dupeCheck = CheckDupe(guessedLetters.Text, guess.Text);
                 if (dupeCheck)
                 {
-                   guessResponse.Text = "You already guessed that one";
+                    guessResponse.Text = "You already guessed that one";
 
                 }
 
@@ -177,7 +178,7 @@ namespace hangmanGameEmpty
 
         }
 
-        
 
-            }
+
+    }
 }

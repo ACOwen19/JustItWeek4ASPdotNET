@@ -36,7 +36,8 @@
             <asp:Panel ID="Panel2" runat="server" Visible="False">
                 Guess a letter:
 
-                <asp:Label ID="guessedLetters" runat="server" Text="Guessed Letters: "></asp:Label>
+                <asp:Label ID="guessedLettersTitle" runat="server" Text="Guessed Letters: "></asp:Label>
+                <asp:Label ID="guessedLetters" runat="server" Text="Label"></asp:Label>
         <asp:TextBox ID="guess" runat="server"></asp:TextBox>
                 <asp:Button ID="guessButton" runat="server" Text="Guess" OnClick="guessButton_Click" />
                 <asp:Image ID="Image1" runat="server" />

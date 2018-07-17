@@ -1,42 +1,49 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="hangmanGame._Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="hangManGame.Default" %>
 
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+<!DOCTYPE html>
 
-    <div class="jumbotron">
-        <h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+    <header>
+
+                <asp:Button ID="startButton" runat="server" Text="Start" OnClick="startButton_Click" />
+                <asp:DropDownList ID="DropDownList1" runat="server">
+                    <asp:ListItem>4</asp:ListItem>
+                    <asp:ListItem>5</asp:ListItem>
+                    <asp:ListItem>6</asp:ListItem>
+                    <asp:ListItem>7</asp:ListItem>
+                    <asp:ListItem>8</asp:ListItem>
+                </asp:DropDownList>
+                <asp:Label ID="Label1" runat="server" Text="Hangman Game"></asp:Label>
+                <asp:Button ID="Button2" runat="server" Text="Scores" />
+                <asp:Button ID="Button3" runat="server" Text="Give Up" />
+
+            </header>
+
+            <asp:Panel ID="Panel1" runat="server" Height="234px" Width="868px" Visible="False">
+                <asp:Image ID="gallows" src="Content/testOne.png" runat="server" Visible="True" />
+                <asp:Image ID="lifeOne" src="Content/testTwo.png" runat="server" Visible="False" />
+                <asp:Image ID="lifeTwo" src="Content/testThree.png" runat="server" Visible="False" />
+                <asp:Image ID="lifeThree" src="Content/testFour.png" runat="server" Visible="False" />
+                <asp:Image ID="lifeFour" src="Content/testFive.png" runat="server" Visible="False" />
+                <asp:Image ID="lifeFive" src="Content/testSix.png" runat="server" Visible="False" />
+            </asp:Panel>
+            <asp:Panel ID="Panel2" runat="server" Visible="False">
+                Guess a letter:
+
+                <asp:Label ID="guessedLettersTitle" runat="server" Text="Guessed Letters: "></asp:Label>
+                <asp:Label ID="guessedLetters" runat="server" Text="Label"></asp:Label>
+        <asp:TextBox ID="guess" runat="server"></asp:TextBox>
+                <asp:Button ID="guessButton" runat="server" Text="Guess" OnClick="guessButton_Click" />
+                <asp:Image ID="Image1" runat="server" />
+                 <asp:Label ID="guessResponse" runat="server" Text=""></asp:Label>
+            </asp:Panel>
     </div>
-
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Getting started</h2>
-            <p>
-                ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>
-                NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Web Hosting</h2>
-            <p>
-                You can easily find a web hosting company that offers the right mix of features and price for your applications.
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-            </p>
-        </div>
-    </div>
-
-</asp:Content>
+    </form>
+</body>
+</html>

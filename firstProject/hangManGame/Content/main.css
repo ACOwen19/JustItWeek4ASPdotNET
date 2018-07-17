@@ -1,0 +1,142 @@
+﻿
+
+
+body {
+    background-image: url(/Content/blackboardBG.png);
+    background-position: center 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-y: hidden;
+    font-family: sans-serif, 'Times New Roman';
+    font-size: 12pt;
+}
+
+#background {
+}
+
+
+
+#navigation {
+    height: 6vh;
+    background-color: rgb(9, 8, 8);
+    border-bottom: 2px solid rgb(200,200,200);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.navButton {
+    color: rgb(255, 255, 255);
+    height: 5vh;
+    display: block;
+    background-color: rgb(141, 141, 141);
+    border: 1px solid rgb(0, 0, 0);
+    cursor: pointer;
+    border-radius: 5px 5px;
+    font-size: 16pt;
+}
+
+#startButton {
+    margin: 0.5vh 85% 0 5%;
+    width: 10%;
+    z-index: 105;
+    position: fixed;
+}
+
+#title {
+    margin: 0.5vh 40% 0 40%;
+    width: 20%;
+    color: rgb(200, 200, 200);
+    font-size: 2em;
+    text-align: center;
+    z-index: 125;
+    position: fixed;
+}
+
+#lengthSelector {
+    margin: 1.5vh 74% 0 16%;
+    height: 3vh;
+    width: 10%;
+    position: fixed;
+    z-index: 120;
+}
+
+#scoreButton {
+    margin: 0.5vh 16% 0 74%;
+    width: 10%;
+    z-index: 110;
+    position: fixed;
+}
+
+#quitButton {
+    margin: 0.5vh 5% 0 85%;
+    width: 10%;
+    z-index: 115;
+    position: fixed;
+}
+
+#Panel1{
+    display:flex;
+    justify-content:center;
+    padding-top: 12.5vh;
+    margin: 0 5%;
+    padding-bottom: 3vh;
+    background-color: rgba(91, 84, 84, 0.5);
+}
+
+#Panel2{
+    /*display:flex;
+    justify-content:center;*/
+    margin: 0 5% 2% 5%;
+    padding-bottom: 25vh;
+    background-color: rgba(91, 84, 84, 0.5);
+    color: rgb(255, 255, 255);
+}
+
+#Panel2 div{
+    display:block;
+    padding: 1vh 0;
+    text-align: center;
+}
+
+#visualiser{
+    font-size: 3em;
+    letter-spacing: 1vw;
+    text-transform: uppercase;
+}
+
+#guessLine{
+    display: flex;
+    justify-content: center;
+    font-size: 1.5em;
+
+}
+
+#guessButton{
+    color: rgb(255, 255, 255);
+    background-color: rgb(141, 141, 141);
+    border: 1px solid rgb(0, 0, 0);
+    cursor: pointer;
+    border-radius: 5px 5px;
+    margin: 0 0.5vw;
+    font-family: sans-serif, 'Times New Roman';
+    
+}
+
+#userInstruction{
+   margin: 0 0.5vw;
+}
+
+#guessedLettersC{
+     display: flex;
+    justify-content: center;
+    font-size: 1.5em;
+}
+
+
+/*.hangImg{
+    display: flex;
+    
+}*/

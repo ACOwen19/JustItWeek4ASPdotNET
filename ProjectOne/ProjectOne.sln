@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hangmanGame", "hangmanGame\hangmanGame.csproj", "{3323A0FE-5BEC-45F3-8277-CAF321EEBEFD}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hangmanGameEmpty", "hangmanGameEmpty\hangmanGameEmpty.csproj", "{2978CC39-B8C7-46BE-86F9-716635E2AD0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hangManGame", "hangManGame\hangManGame.csproj", "{64CFF37F-EABD-40DE-BCA2-82EB890FF32A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3323A0FE-5BEC-45F3-8277-CAF321EEBEFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3323A0FE-5BEC-45F3-8277-CAF321EEBEFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3323A0FE-5BEC-45F3-8277-CAF321EEBEFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3323A0FE-5BEC-45F3-8277-CAF321EEBEFD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2978CC39-B8C7-46BE-86F9-716635E2AD0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2978CC39-B8C7-46BE-86F9-716635E2AD0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2978CC39-B8C7-46BE-86F9-716635E2AD0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2978CC39-B8C7-46BE-86F9-716635E2AD0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64CFF37F-EABD-40DE-BCA2-82EB890FF32A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64CFF37F-EABD-40DE-BCA2-82EB890FF32A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64CFF37F-EABD-40DE-BCA2-82EB890FF32A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64CFF37F-EABD-40DE-BCA2-82EB890FF32A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
