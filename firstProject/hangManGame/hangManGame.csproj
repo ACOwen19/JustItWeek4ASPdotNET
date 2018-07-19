@@ -66,6 +66,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\gallowsTrans.png" />
+    <Content Include="Content\lifeFourTrans.png" />
+    <Content Include="Content\lifeOne.png" />
+    <Content Include="Content\lifeOneTrans.png" />
+    <Content Include="Content\lifeThreeTrans.png" />
+    <Content Include="Content\lifeTwoTrans.png" />
+    <Content Include="Content\testGifTwo.gif" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -76,14 +83,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\blackboardBG.png" />
-    <Content Include="Content\openBookBackground.png" />
-    <Content Include="Content\testBG.png" />
-    <Content Include="Content\testFive.png" />
-    <Content Include="Content\testFour.png" />
-    <Content Include="Content\testOne.png" />
-    <Content Include="Content\testSix.png" />
-    <Content Include="Content\testThree.png" />
-    <Content Include="Content\testTwo.png" />
     <Content Include="Global.asax" />
     <Content Include="Content\main.css" />
     <Content Include="Web.config" />

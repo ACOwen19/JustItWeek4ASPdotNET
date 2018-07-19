@@ -4,17 +4,22 @@
 body {
     background-image: url(/Content/blackboardBG.png);
     background-position: center 0;
-    background-size: cover;
-    background-repeat: no-repeat;
+    /*background-size: cover;*/
+    /*background-repeat: no-repeat;*/
     overflow-y: hidden;
     font-family: sans-serif, 'Times New Roman';
     font-size: 12pt;
 }
-
-#background {
+.allButton{
+    color: rgb(255, 255, 255);
+    background-color: rgb(141, 141, 141);
+    border: 1px solid rgb(0, 0, 0);
+    cursor: pointer;
+    border-radius: 5px 5px;
+    margin: 0 0.5vw;
+    font-family: sans-serif, 'Times New Roman';
+    
 }
-
-
 
 #navigation {
     height: 6vh;
@@ -27,7 +32,7 @@ body {
     z-index: 100;
 }
 
-.navButton {
+/*.navButton {
     color: rgb(255, 255, 255);
     height: 5vh;
     display: block;
@@ -36,13 +41,17 @@ body {
     cursor: pointer;
     border-radius: 5px 5px;
     font-size: 16pt;
-}
+}*/
+
 
 #startButton {
     margin: 0.5vh 85% 0 5%;
     width: 10%;
     z-index: 105;
     position: fixed;
+    height: 5vh;
+    font-size: 16pt;
+    display: block;
 }
 
 #title {
@@ -68,6 +77,9 @@ body {
     width: 10%;
     z-index: 110;
     position: fixed;
+    height: 5vh;
+    font-size: 16pt;
+    display: block;
 }
 
 #quitButton {
@@ -75,6 +87,9 @@ body {
     width: 10%;
     z-index: 115;
     position: fixed;
+    height: 5vh;
+    font-size: 16pt;
+    display: block;
 }
 
 #Panel1{
@@ -87,8 +102,7 @@ body {
 }
 
 #Panel2{
-    /*display:flex;
-    justify-content:center;*/
+    
     margin: 0 5% 2% 5%;
     padding-bottom: 25vh;
     background-color: rgba(91, 84, 84, 0.5);
@@ -96,47 +110,81 @@ body {
 }
 
 #Panel2 div{
-    display:block;
-    padding: 1vh 0;
+    display: block;
+    padding: .5vh 0;
     text-align: center;
 }
 
-#visualiser{
+#errorPanel{
+    font-size: 1em;
+    position: absolute;
+    width: 100%;
+    text-align: left;
+    top: 7%;
+    left: 16%;
+    color: rgb(200,200,200);
+    font-weight: bold;
+}
+
+/*#visualiser{
     font-size: 3em;
     letter-spacing: 1vw;
     text-transform: uppercase;
+}*/
+#visLabels{
+    display: flex;
+    justify-content: center;
+    
 }
+
+.visLabel{
+    font-size: 3em;
+    text-transform: uppercase;
+    width: 40px;
+    
+}
+
+.visLabelHidden{
+   
+}
+
 
 #guessLine{
     display: flex;
     justify-content: center;
     font-size: 1.5em;
+    margin: .5em 0;
 
 }
 
-#guessButton{
-    color: rgb(255, 255, 255);
-    background-color: rgb(141, 141, 141);
-    border: 1px solid rgb(0, 0, 0);
-    cursor: pointer;
-    border-radius: 5px 5px;
-    margin: 0 0.5vw;
-    font-family: sans-serif, 'Times New Roman';
-    
-}
+
 
 #userInstruction{
    margin: 0 0.5vw;
 }
 
+#guessResponse{
+   margin: 0 0.5vw;
+}
+
 #guessedLettersC{
-     display: flex;
+    display: flex;
     justify-content: center;
     font-size: 1.5em;
+    margin: .5em 0;
+}
+
+#guessedLetters{
+    text-transform: uppercase;
 }
 
 
-/*.hangImg{
+
+#guessResponseC{
     display: flex;
-    
-}*/
+    justify-content: center;
+    font-size: 1.5em;
+    margin: .5em 0;
+}
+
+

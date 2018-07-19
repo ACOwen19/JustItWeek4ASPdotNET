@@ -1,0 +1,54 @@
+﻿@model MVCPartyTutorial.Models.GuestResponse
+
+@{
+    ViewBag.Title = "Thanks";
+}
+
+<style>
+    body{
+        background-color: lightskyblue;
+    }
+</style>
+
+@{ 
+    try
+    {
+        WebMail.SmtpServer = "smtp@gmail.com";
+        WebMail.SmtpPort = 587;
+        WebMail.EnableSsl = true;
+        // These settings will be different for different web providers
+        WebMail.UserName = "justitcoursetest19@gmail.com";
+        WebMail.Password = "JustItTest";
+        WebMail.From = "justitcoursetest19@gmail.com";
+        // .From can be anything, so could be input e-mail or name
+        WebMail.Send("justitcoursetest19@gmail.com", "RSVP Notification", Model.Name + " is " + ((Model.WillAttend ?? false) ? "" : "not")
+            + "attending");
+        // .Send("email address of the recipient", "email subject", "content of the e-mail")
+        // Model.WillAttend ?? false - ?? is null coalescing operater, 
+        // means that if there is a value for the operator then use that, 
+        // otherwise if it is null, assume false
+        // ? " ": "not" - ? is the ternary operator, basically operates like an if else statment, in this case,
+        // if true output "", if false or null (because of ??) output not;
+    }
+    catch(Exception)
+    {
+        @:<b>Sorry - we couldn't send the email to confirm your RSVP.</b>
+    }
+
+}
+
+
+<div class="text-center">
+    <h2>Thank you, @Model.Name!</h2>
+    <div class="lead">
+        @if (Model.WillAttend == true)
+        {
+            @:It's great you're coming!
+}
+        else
+        {
+            @: Sorry to hear that you can't make it, but thanks for letting us know
+    //@: lets you add html in css without using html tags which would usually indicate that its HTML in razor
+        }
+    </div>
+</div>

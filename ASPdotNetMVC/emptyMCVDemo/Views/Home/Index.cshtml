@@ -1,0 +1,20 @@
+﻿@using emptyMCVDemo.Models
+@model IEnumerable<Album>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>Albums</h2>
+
+@foreach (Album r in Model)
+{
+    <ul>
+        <li>@r.Title</li>
+        <li>@r.Artist</li>
+        <li>@r.Format</li>
+        <li>@r.Price</li>
+    </ul>
+    <hr />
+}
+
