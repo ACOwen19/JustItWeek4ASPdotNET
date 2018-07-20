@@ -1,0 +1,80 @@
+﻿@model MVCMovies18.Models.Movie
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken();
+    // Helps protect against cross site request forgery (CSRF) attacks)
+    <div class="form-horizontal">
+        <h4>Movie</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @* This will display an error message if validation is not met.
+        Leaving () blank will display default error messages. Can add custom error messages in rules or here *@
+        @* true = show only model level errors, not for individual fields - these are shown beneath each field
+            "" is where a message could be added, new {} will turn the text red in case of an error *@
+        <div class="form-group">
+            @* Brings label & input box over to the left *@
+            @Html.LabelFor(m => m.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+            @* htmlAttributes allows the C# to affect the html. control-lable aligns the label adn col-md-2 creates a 2 unit column *@
+
+            <div class="col-md-10">
+                @* Creates a 10 unit wide column *@
+                @Html.EditorFor(m => m.Title, new { htmlAttributes = new { @class = "form-control" } })
+                @* form-control styles the input box with grey edges, rounded corners etc *@
+                @Html.ValidationMessageFor(m => m.Title, "", new { @class = "text=danger" })
+                @* adds an error message for the field. "" could be text but if blank the default messages from the data annotations in the model class will be used.  *@
+                @* QUESTION: Why is htmlAtrributes inconsitently used?
+                ANSWER: Could be different ways of doing the same thing, could be requirements of different HTML helpers *@
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.ReleaseDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(m => m.ReleaseDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.Title, "", new { @class = "text=danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Genre, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(m => m.Genre, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.Title, "", new { @class = "text=danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Price, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(m => m.Price, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.Title, "", new { @class = "text=danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.ImageUrl, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(m => m.ImageUrl, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.Title, "", new { @class = "text=danger" })
+            </div>
+        </div>
+
+        <div class="form-group"> @* Aligns the button with the other form elements *@
+            <div class="col-md-offset-2 col-md-10"> @* moves the next column over by 2 units & creates a column 10 units wide *@
+            @* col-md is medium size, sm is small etc *@
+                <input type="submit" value="Create Movie" class="btn btn-default" />
+            @* btn btn-default styles the button *@
+            </div>
+        </div>
+    </div>
+}
+
+@Html.ActionLink("Back to List", "Index")

@@ -72,7 +72,7 @@ body {
     z-index: 120;
 }
 
-#scoreButton {
+#aboutButton {
     margin: 0.5vh 16% 0 74%;
     width: 10%;
     z-index: 110;
@@ -95,9 +95,8 @@ body {
 #Panel1{
     display:flex;
     justify-content:center;
-    padding-top: 12.5vh;
+    padding-top: 10.5vh;
     margin: 0 5%;
-    padding-bottom: 3vh;
     background-color: rgba(91, 84, 84, 0.5);
 }
 
@@ -109,6 +108,15 @@ body {
     color: rgb(255, 255, 255);
 }
 
+#Panel3{
+    
+    margin: 0 5%;
+    background-color: rgba(91, 84, 84, 0.5);
+    color: rgb(255, 255, 255);
+   
+}
+
+
 #Panel2 div{
     display: block;
     padding: .5vh 0;
@@ -118,7 +126,6 @@ body {
 #errorPanel{
     font-size: 1em;
     position: absolute;
-    width: 100%;
     text-align: left;
     top: 7%;
     left: 16%;
@@ -126,11 +133,6 @@ body {
     font-weight: bold;
 }
 
-/*#visualiser{
-    font-size: 3em;
-    letter-spacing: 1vw;
-    text-transform: uppercase;
-}*/
 #visLabels{
     display: flex;
     justify-content: center;
@@ -157,14 +159,16 @@ body {
 
 }
 
-
-
 #userInstruction{
    margin: 0 0.5vw;
 }
 
 #guessResponse{
    margin: 0 0.5vw;
+}
+
+#feedbackThumb{
+  
 }
 
 #guessedLettersC{
@@ -176,9 +180,8 @@ body {
 
 #guessedLetters{
     text-transform: uppercase;
+    margin-left: 5px;
 }
-
-
 
 #guessResponseC{
     display: flex;

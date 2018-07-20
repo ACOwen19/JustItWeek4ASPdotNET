@@ -31,6 +31,15 @@ namespace hangManGame {
         protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
+        /// UpdatePanel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        
+        /// <summary>
         /// startButton control.
         /// </summary>
         /// <remarks>
@@ -40,13 +49,13 @@ namespace hangManGame {
         protected global::System.Web.UI.WebControls.Button startButton;
         
         /// <summary>
-        /// scoreButton control.
+        /// aboutButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button scoreButton;
+        protected global::System.Web.UI.WebControls.Button aboutButton;
         
         /// <summary>
         /// quitButton control.
@@ -94,13 +103,22 @@ namespace hangManGame {
         protected global::System.Web.UI.WebControls.Label errorDisplay;
         
         /// <summary>
-        /// UpdatePanel1 control.
+        /// Panel3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        protected global::System.Web.UI.WebControls.Panel Panel3;
+        
+        /// <summary>
+        /// closeAboutButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button closeAboutButton;
         
         /// <summary>
         /// Panel1 control.
@@ -346,15 +364,6 @@ namespace hangManGame {
         protected global::System.Web.UI.WebControls.Button guessButton;
         
         /// <summary>
-        /// hintButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button hintButton;
-        
-        /// <summary>
         /// feedbackThumb control.
         /// </summary>
         /// <remarks>
@@ -371,6 +380,15 @@ namespace hangManGame {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label guessResponse;
+        
+        /// <summary>
+        /// hintButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button hintButton;
         
         /// <summary>
         /// guessedLettersTitle control.

@@ -1,0 +1,66 @@
+﻿@model IEnumerable<MVCMovies18.Models.Movie>
+
+@{
+    ViewBag.Title = "Movies";
+}
+
+@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@* Don't need to have this here as the _ViewStart.cshtml sets the default layout for any view unless specified otherwise *@
+
+
+<h2>Movies</h2>
+@* Link for createing a new record - the 1st parameter is the text for the link
+     and the second is the action method tht it goes to *@
+@Html.ActionLink("Create a new movie", "Create")
+
+@using (Html.BeginForm()) // Adding a form to allow user to filter the table
+{
+    <p>
+        Title: @Html.TextBox("SearchString")
+        @* Adds a textbox *@
+        Genre: @Html.DropDownList("movieGenre", "All") 
+        @* Creates a dropdown list, movieGenre is a SelectList containing the options for the DD. 
+            In the index action method & sent via the viewbag. 
+            All is the text that will appear as the default option when nothing has been selected *@
+        <input type="submit" value="Filter" />
+    </p>
+}
+
+<table class="table">
+    @*column headings for the table*@
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReleaseDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Genre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.ImageUrl)
+        </th> This is redundant now we are displaying the images rather than the urls*@
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(m => item.Title)</td>
+            <td>@Html.DisplayFor(m => item.ReleaseDate)</td>
+            <td>@Html.DisplayFor(m => item.Genre)</td>
+            <td>@Html.DisplayFor(m => item.Price)</td>
+            <td><img src="@Url.Content(item.ImageUrl)" height="100" /> </td>
+            <td>
+            @Html.ActionLink("Edit Record", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Details of Record", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Delete Record", "Delete", new { id = item.Id }) 
+            </td>
+        </tr>
+    }
+</table>
+

@@ -1,0 +1,32 @@
+﻿@model MVCMovies18.Models.Movie
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<h4>Movie</h4>
+<hr />
+<dl class="dl-horizontal"> @* Aranges the labels & info in the list horizontally - easier to read *@
+    <dt>@Html.DisplayNameFor(m => m.Title)</dt>
+    <dd>@Html.DisplayFor(m => m.Title)</dd>
+    <dt>@Html.DisplayNameFor(m => m.ReleaseDate)</dt>
+    <dd>@Html.DisplayFor(m => m.ReleaseDate)</dd>
+    <dt>@Html.DisplayNameFor(m => m.Genre)</dt>
+    <dd>@Html.DisplayFor(m => m.Genre)</dd>
+    <dt>@Html.DisplayNameFor(m => m.Price)</dt>
+    <dd>@Html.DisplayFor(m => m.Price)</dd>
+    <dt>@Html.DisplayNameFor(m => m.ImageUrl)</dt>
+    <dd>@Html.DisplayFor(m => m.ImageUrl)</dd>
+</dl>
+<p>
+    @Html.ActionLink("Edit Record", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+
+
+
+
+

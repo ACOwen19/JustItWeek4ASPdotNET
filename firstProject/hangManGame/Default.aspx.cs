@@ -11,12 +11,14 @@ namespace hangManGame
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
-                
+
         static List<string> ranWords = new List<string>();
+        static List<string> wordHints = new List<string>();
         static int randNum = 0;
         static string answer = "";
+        static string hint = "";
         static int wordLength = 0;
         static char[] answerChars = new char[0];
         static string[] guessDisplay = new string[0];
@@ -32,8 +34,9 @@ namespace hangManGame
             ranWords.Clear();
             generateWords();
             Random rnd = new Random();
-            randNum = rnd.Next(0, 7);
+            randNum = rnd.Next(0, 10);
             answer = ranWords[randNum];
+            hint = wordHints[randNum];
             answerChars = answer.ToCharArray();
             guessDisplay = new string[wordLength];
             answerCheck = new char[wordLength];
@@ -52,41 +55,54 @@ namespace hangManGame
 
         public string resetResponse()
         {
-            string output = " ";
+            string output = "";
             return output;
         }
 
+        public string resetFeedback()
+        {
+            string output = "&#128408";
+            return output;
+        }
+
+       
         public void generateWords()
         {
             if (lengthSelector.Text == "Select a length:")
             {
 
-                ranWords.InsertRange(ranWords.Count, new string[] { "a", "b", "c", "d", "e" ,"f", "g" });
+                ranWords.InsertRange(ranWords.Count, new string[] { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j" });
+                wordHints.InsertRange(wordHints.Count, new string[] { "k", "l", "m", "n", "o", "p", "q", "r", "s", "t" });
                 wordLength = 1;
             }
             else if (lengthSelector.SelectedIndex == 1)
             {
-                ranWords.InsertRange(ranWords.Count, new string[] { "gree", "blue", "yell", "redr", "oran", "indi", "viol" });
+                ranWords.InsertRange(ranWords.Count, new string[] { "gree", "blue", "yell", "redr", "oran", "indi", "viol", "oran", "indi", "viol" });
+                wordHints.InsertRange(wordHints.Count, new string[] { "gree", "blue", "yell", "redr", "oran", "indi", "viol", "oran", "indi", "viol" });
                 wordLength = 4;
             }
             else if (lengthSelector.SelectedIndex == 2)
             {
-                ranWords.InsertRange(ranWords.Count, new string[] { "green", "bluee", "yello", "redre", "orang", "indig", "viole" });
+                ranWords.InsertRange(ranWords.Count, new string[] { "green", "bluee", "yello", "redre", "orang", "indig", "viole", "orang", "indig", "viole" });
+                wordHints.InsertRange(wordHints.Count, new string[] { "gree", "blue", "yell", "redr", "oran", "indi", "viol", "orang", "indig", "viole" });
                 wordLength = 5;
             }
             else if (lengthSelector.SelectedIndex == 3)
             {
-                ranWords.InsertRange(ranWords.Count, new string[] { "greenr", "blueer", "yellow", "redred", "orange", "indigo", "violet" });
+                ranWords.InsertRange(ranWords.Count, new string[] { "greenr", "blueer", "yellow", "redred", "orange", "indigo", "violet", "orange", "indigo", "violet" });
+                wordHints.InsertRange(wordHints.Count, new string[] { "gree", "blue", "yell", "redr", "oran", "indi", "viol", "orange", "indigo", "violet" });
                 wordLength = 6;
             }
             else if (lengthSelector.SelectedIndex == 4)
             {
                 ranWords.InsertRange(ranWords.Count, new string[] { "greenrr", "blueerr", "yellowr", "redredr", "oranger", "indigor", "violetr" });
+                wordHints.InsertRange(wordHints.Count, new string[] { "gree", "blue", "yell", "redr", "oran", "indi", "viol", "oranger", "indigor", "violetr" });
                 wordLength = 7;
             }
             else if (lengthSelector.SelectedIndex == 5)
             {
-                ranWords.InsertRange(ranWords.Count, new string[] { "greenerr", "blueerrr", "yellower", "redreder", "orangerr", "indigoer", "violeter" });
+                ranWords.InsertRange(ranWords.Count, new string[] { "greenerr", "blueerrr", "yellower", "redreder", "orangerr", "indigoer", "violeter", "orangerr", "indigoer", "violeter" });
+                wordHints.InsertRange(wordHints.Count, new string[] { "grese", "brlue", "yelal", "redsr", "toran", "iandi", "viaol", "orangerr", "indigoer", "violeter" });
                 wordLength = 8;
             }
 
@@ -113,7 +129,7 @@ namespace hangManGame
 
                 if (wordVis is Label)
                 {
-                    
+
                     if ((wordVis as Label).ID == iCon)
                     {
                         (wordVis as Label).Text = answerArray[inputIndex].ToString();
@@ -132,7 +148,7 @@ namespace hangManGame
                                 (wordVis as Label).CssClass = "visLabel";
                             }
                         }
-                        for (int j = 1; j< wordLength; j += 1)
+                        for (int j = 1; j < wordLength; j += 1)
                         {
                             string iConSpace = "space" + Convert.ToString(j);
 
@@ -147,7 +163,7 @@ namespace hangManGame
                     {
                         (wordVis as Label).Visible = false;
                     }
-                    else if((wordVis as Label).CssClass == "visLabel")
+                    else if ((wordVis as Label).CssClass == "visLabel")
                     {
                         (wordVis as Label).Visible = true;
 
@@ -156,29 +172,11 @@ namespace hangManGame
             }
         }
 
-        //private string updateGuessDisplay(string[] guessDisplayArray, int inputIndex, char[] answerArray)
-        //{
-        //    string guessDisplayOutput = "";
-        //    for (int i = 0; i < wordLength; i += 1)
-        //    {
-        //        if (i == inputIndex)
-        //        {
-        //            guessDisplayArray[i] = answerArray[i].ToString() + "     ";
-        //        }
-        //        else if (inputIndex == 99)
-        //        {
-        //            guessDisplayArray[i] = "_     ";
-        //        }
-        //        guessDisplayOutput += guessDisplayArray[i];
-        //    }
-        //    return guessDisplayOutput;
-        //}
-
         protected void startButton_Click(object sender, EventArgs e)
         {
             guessResponse.Text = resetResponse();
             guessedLetters.Text = resetResponse();
-            feedbackThumb.Text = resetResponse();
+            feedbackThumb.Text = resetFeedback();
             resetQuiz();
             if (lengthSelector.Text == "Select a length:")
             {
@@ -191,7 +189,6 @@ namespace hangManGame
                 guessButton.Enabled = true;
                 Panel1.Visible = true;
                 Panel2.Visible = true;
-                //wordLengthVisualiser.Text = updateGuessDisplay(guessDisplay, 99, answerChars);
                 UpdateVisLabels(99, answerChars);
                 errorDisplay.Text = "";
                 errorPanel.Visible = false;
@@ -214,14 +211,14 @@ namespace hangManGame
                     else
                     {
                         answerCheck[i] = answerChars[i];
-                        //wordLengthVisualiser.Text = updateGuessDisplay(guessDisplay, i, answerChars);
-                        UpdateVisLabels(i, answerChars);                    
+                        UpdateVisLabels(i, answerChars);
                     }
                 }
             }
             if (guessCheck == true)
             {
                 answerMatch = CheckAnswer(answerCheck);
+                hintButton.Visible = false;
                 if (answerMatch == answer)
                 {
                     guessResponse.Text = "You got it! The word was " + answer;
@@ -261,12 +258,13 @@ namespace hangManGame
                 else
                 {
                     lives += 1;
-                    guessedLetters.Text += guess.Text + " ";
+                    guessedLetters.Text += " " + guess.Text;
+                    hintButton.Visible = true;
                     if (lives == 1)
                     {
                         gallows.Visible = false;
                         lifeOne.Visible = true;
-                        hintButton.Visible = true;
+                        
                         guessResponse.Text = "Incorrect, guess again";
                         feedbackThumb.Text = "&#128403";
                     }
@@ -327,7 +325,19 @@ namespace hangManGame
 
         protected void hintButton_Click(object sender, EventArgs e)
         {
+            hintButton.Visible = false;
+            guessResponse.Text = hint;
+        }
 
+        protected void aboutButton_Click(object sender, EventArgs e)
+        {
+            Panel3.Visible = true;
+            // if panel1/2 was visible is true then hide them but ensure that close button unhides them
+        }
+
+        protected void closeAboutButton_Click(object sender, EventArgs e)
+        {
+            Panel3.Visible = false;
         }
     }
 }
