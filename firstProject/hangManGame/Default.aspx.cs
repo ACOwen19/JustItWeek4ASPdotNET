@@ -28,6 +28,7 @@ namespace hangManGame
         static bool dupeCheck = false;
         char userGuess = ' ';
         string answerMatch = "";
+        static bool quizStarted = false;
 
         public void resetQuiz()
         {
@@ -38,6 +39,7 @@ namespace hangManGame
             answer = ranWords[randNum];
             hint = wordHints[randNum];
             answerChars = answer.ToCharArray();
+            wordLength = answerChars.Length;
             guessDisplay = new string[wordLength];
             answerCheck = new char[wordLength];
             answerMatch = "";
@@ -50,7 +52,8 @@ namespace hangManGame
             lifeFive.Visible = false;
             lives = 0;
             hintButton.Visible = false;
-
+            quizStarted = false;
+            
         }
 
         public string resetResponse()
@@ -73,37 +76,37 @@ namespace hangManGame
 
                 ranWords.InsertRange(ranWords.Count, new string[] { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j" });
                 wordHints.InsertRange(wordHints.Count, new string[] { "k", "l", "m", "n", "o", "p", "q", "r", "s", "t" });
-                wordLength = 1;
+                
             }
             else if (lengthSelector.SelectedIndex == 1)
             {
-                ranWords.InsertRange(ranWords.Count, new string[] { "gree", "blue", "yell", "redr", "oran", "indi", "viol", "oran", "indi", "viol" });
-                wordHints.InsertRange(wordHints.Count, new string[] { "gree", "blue", "yell", "redr", "oran", "indi", "viol", "oran", "indi", "viol" });
-                wordLength = 4;
+                ranWords.InsertRange(ranWords.Count, new string[] { "queen", "fleetwood mac", "nirvana", "pink floyd", "the who", "led zeppelin", "alphaville", "smash mouth", "the doors", "the police" });
+                wordHints.InsertRange(wordHints.Count, new string[] { "This band's lead singer tragically died in 1991.", "This band's album Rumors was top of the US charts for 31 weeks.", "This Seattle band helped found the Grunge movement.", "This British band, founded in 1965, have sold more than 250 Million records worldwide.", "This rock band are famous for destroying their instruments at the end of shows.", "This band were originally know as the Yardbirds.", "This german band first achived success with the single 'Big in Japan'", "This band's hit All-Star has become a popular track for re-mixes and mash-ups.", "This band's hit 'Riders on the Storm' was covered by Snoop Dog.", "This bands lead singer Sting had a successful career after they split in 1986." });
+            // Bands
             }
             else if (lengthSelector.SelectedIndex == 2)
             {
                 ranWords.InsertRange(ranWords.Count, new string[] { "green", "bluee", "yello", "redre", "orang", "indig", "viole", "orang", "indig", "viole" });
                 wordHints.InsertRange(wordHints.Count, new string[] { "gree", "blue", "yell", "redr", "oran", "indi", "viol", "orang", "indig", "viole" });
-                wordLength = 5;
+            // Historical Figures
             }
             else if (lengthSelector.SelectedIndex == 3)
             {
                 ranWords.InsertRange(ranWords.Count, new string[] { "greenr", "blueer", "yellow", "redred", "orange", "indigo", "violet", "orange", "indigo", "violet" });
                 wordHints.InsertRange(wordHints.Count, new string[] { "gree", "blue", "yell", "redr", "oran", "indi", "viol", "orange", "indigo", "violet" });
-                wordLength = 6;
+            // Canadian Provinces    
             }
             else if (lengthSelector.SelectedIndex == 4)
             {
-                ranWords.InsertRange(ranWords.Count, new string[] { "greenrr", "blueerr", "yellowr", "redredr", "oranger", "indigor", "violetr" });
-                wordHints.InsertRange(wordHints.Count, new string[] { "gree", "blue", "yell", "redr", "oran", "indi", "viol", "oranger", "indigor", "violetr" });
-                wordLength = 7;
+                ranWords.InsertRange(ranWords.Count, new string[] { "broncos", "raiders", "packers", "steelers", "seahawks", "saints", "redskins", "falcons", "dolphins", "jaguars" });
+                wordHints.InsertRange(wordHints.Count, new string[] { "This team play at Mile High Stadium.", "This team famously played in the 'Black Hole'.", "This team won the very first Super Bowl.", "This team have won more Super Bowls than any other.", "This expansion team's 'Legion of Boom' secondary helped them win Super Bowl 48.", "This team's Super Bowl Victory in 2009 came soon after their city was devastated by Hurricane Katrina.", "This team have come under pressure to change their name in recent years.", "This team's nickname is the 'Dirty Birds'.", "This team are the only franchise to have recorded an undefeated season in the Super Bowl era.", "This Florida team's quarterback is Blake Bortles." });
+            // NFL Teams 
             }
             else if (lengthSelector.SelectedIndex == 5)
             {
                 ranWords.InsertRange(ranWords.Count, new string[] { "greenerr", "blueerrr", "yellower", "redreder", "orangerr", "indigoer", "violeter", "orangerr", "indigoer", "violeter" });
                 wordHints.InsertRange(wordHints.Count, new string[] { "grese", "brlue", "yelal", "redsr", "toran", "iandi", "viaol", "orangerr", "indigoer", "violeter" });
-                wordLength = 8;
+            // Something Else
             }
 
         }
@@ -144,8 +147,17 @@ namespace hangManGame
 
                             if ((wordVis as Label).ID == iConLetter)
                             {
-                                (wordVis as Label).Text = "_";
-                                (wordVis as Label).CssClass = "visLabel";
+                                if (answerArray[i].ToString() == " ")
+                                {
+                                    (wordVis as Label).Text = "";
+                                    answerCheck[i] = answerArray[i];
+                                    (wordVis as Label).CssClass = "visLabel";
+                                }
+                                else
+                                {
+                                    (wordVis as Label).Text = "_";
+                                    (wordVis as Label).CssClass = "visLabel";
+                                }
                             }
                         }
                         for (int j = 1; j < wordLength; j += 1)
@@ -178,6 +190,7 @@ namespace hangManGame
             guessedLetters.Text = resetResponse();
             feedbackThumb.Text = resetFeedback();
             resetQuiz();
+            quizStarted = true;
             if (lengthSelector.Text == "Select a length:")
             {
                 errorDisplay.Text = "Please select a word length";
@@ -198,7 +211,7 @@ namespace hangManGame
 
         protected void guessButton_Click(object sender, EventArgs e)
         {
-            userGuess = Convert.ToChar(guess.Text);
+            userGuess = Convert.ToChar((guess.Text).ToLower());
             for (int i = 0; i < wordLength; i += 1)
             {
                 if (userGuess == answerChars[i])
@@ -222,7 +235,6 @@ namespace hangManGame
                 if (answerMatch == answer)
                 {
                     guessResponse.Text = "You got it! The word was " + answer;
-                    //feedback.ForeColor = Color.Green;
                     feedbackThumb.Text = "&#128402";
                     guessCheck = false;
                     guessButton.Enabled = false;
@@ -240,7 +252,6 @@ namespace hangManGame
                 else
                 {
                     guessResponse.Text = "Well Done! Keep Guessing";
-                    //feedback.ForeColor = Color.Green;
                     feedbackThumb.Text = "&#128402";
                     guessCheck = false;
                 }
@@ -332,12 +343,18 @@ namespace hangManGame
         protected void aboutButton_Click(object sender, EventArgs e)
         {
             Panel3.Visible = true;
-            // if panel1/2 was visible is true then hide them but ensure that close button unhides them
+            Panel1.Visible = false;
+            Panel2.Visible = false;            
         }
 
         protected void closeAboutButton_Click(object sender, EventArgs e)
         {
             Panel3.Visible = false;
+            if (quizStarted == true)
+            {
+                Panel1.Visible = true;
+                Panel2.Visible = true;
+            }
         }
     }
 }

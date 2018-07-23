@@ -25,11 +25,11 @@
                 <asp:Button ID="quitButton" CssClass="allButton" runat="server" Text="Quit" OnClick="Quit_Click" />
                 <asp:DropDownList ID="lengthSelector" runat="server">
                     <asp:ListItem>Select a length:</asp:ListItem>
-                    <asp:ListItem>4</asp:ListItem>
-                    <asp:ListItem>5</asp:ListItem>
-                    <asp:ListItem>6</asp:ListItem>
-                    <asp:ListItem>7</asp:ListItem>
-                    <asp:ListItem>8</asp:ListItem>
+                    <asp:ListItem>Bands</asp:ListItem>
+                    <asp:ListItem>Historical Figures</asp:ListItem>
+                    <asp:ListItem>Canadian Provinces</asp:ListItem>
+                    <asp:ListItem>NFL Teams</asp:ListItem>
+                    <asp:ListItem>Something Else</asp:ListItem>
                 </asp:DropDownList>
                 <asp:Label ID="title" runat="server" Text="Hangman Game"></asp:Label>
             </header>
@@ -46,8 +46,8 @@
                             <li>You can guess 5 incorrect letters before you lose.</li>
                           <li>If you're struggling click the hint button to get some help.</li>
                           <li>Click the quit button to give up.</li>
-                        </ul>
-                        <asp:Button ID="closeAboutButton" runat="server" CssClass="allButton" Text="Close" OnClick="closeAboutButton_Click" />
+                        </ul><br />
+                        <asp:Button ID="closeAboutButton" runat="server" CssClass="allButton" Text="Close" OnClick="closeAboutButton_Click" /><br />
                         <footer> Copyright &#169; Archibald Owen 2018 </footer>
                     </asp:Panel>
                     <asp:Panel ID="Panel1" runat="server" Visible="False">
@@ -78,7 +78,17 @@
                                 <asp:Label ID="letter6" CssClass="visLabelHidden" runat="server" Text=""></asp:Label>
                                 <asp:Label ID="space7" CssClass="visLabelHidden" runat="server" Text=" "></asp:Label>
                                 <asp:Label ID="letter7" CssClass="visLabelHidden" runat="server" Text=""></asp:Label>
-                            </ul>
+                                <asp:Label ID="space8" CssClass="visLabelHidden" runat="server" Text=" "></asp:Label>
+                                <asp:Label ID="letter8" CssClass="visLabelHidden" runat="server" Text=""></asp:Label>
+                                <asp:Label ID="space9" CssClass="visLabelHidden" runat="server" Text=" "></asp:Label>
+                                <asp:Label ID="letter9" CssClass="visLabelHidden" runat="server" Text=""></asp:Label>
+                                <asp:Label ID="space10" CssClass="visLabelHidden" runat="server" Text=" "></asp:Label>
+                                <asp:Label ID="letter10" CssClass="visLabelHidden" runat="server" Text=""></asp:Label>
+                                <asp:Label ID="space11" CssClass="visLabelHidden" runat="server" Text=" "></asp:Label>
+                                <asp:Label ID="letter11" CssClass="visLabelHidden" runat="server" Text=""></asp:Label>
+                                <asp:Label ID="space12" CssClass="visLabelHidden" runat="server" Text=" "></asp:Label>
+                                <asp:Label ID="letter12" CssClass="visLabelHidden" runat="server" Text=""></asp:Label>
+                                </ul>
                         </asp:Panel>
                         <div>
                             <ul id="guessLine">
