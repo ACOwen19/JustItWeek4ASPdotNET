@@ -62,47 +62,46 @@ namespace hangManGame
             return output;
         }
 
-        public string resetFeedback()
+        public void resetFeedback()
         {
-            string output = "&#128408";
-            return output;
+            feedbackThumb.Attributes["class"] = "fas fa-hand-point-left";
         }
 
-       
+
         public void generateWords()
         {
-            if (lengthSelector.Text == "Select a length:")
+            if (catSelector.Text == "Select a category:")
             {
 
                 ranWords.InsertRange(ranWords.Count, new string[] { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j" });
                 wordHints.InsertRange(wordHints.Count, new string[] { "k", "l", "m", "n", "o", "p", "q", "r", "s", "t" });
                 
             }
-            else if (lengthSelector.SelectedIndex == 1)
+            else if (catSelector.SelectedIndex == 1)
             {
                 ranWords.InsertRange(ranWords.Count, new string[] { "queen", "fleetwood mac", "nirvana", "pink floyd", "the who", "led zeppelin", "alphaville", "smash mouth", "the doors", "the police" });
                 wordHints.InsertRange(wordHints.Count, new string[] { "This band's lead singer tragically died in 1991.", "This band's album Rumors was top of the US charts for 31 weeks.", "This Seattle band helped found the Grunge movement.", "This British band, founded in 1965, have sold more than 250 Million records worldwide.", "This rock band are famous for destroying their instruments at the end of shows.", "This band were originally know as the Yardbirds.", "This german band first achived success with the single 'Big in Japan'", "This band's hit All-Star has become a popular track for re-mixes and mash-ups.", "This band's hit 'Riders on the Storm' was covered by Snoop Dog.", "This bands lead singer Sting had a successful career after they split in 1986." });
             // Bands
             }
-            else if (lengthSelector.SelectedIndex == 2)
+            else if (catSelector.SelectedIndex == 2)
             {
                 ranWords.InsertRange(ranWords.Count, new string[] { "green", "bluee", "yello", "redre", "orang", "indig", "viole", "orang", "indig", "viole" });
                 wordHints.InsertRange(wordHints.Count, new string[] { "gree", "blue", "yell", "redr", "oran", "indi", "viol", "orang", "indig", "viole" });
             // Historical Figures
             }
-            else if (lengthSelector.SelectedIndex == 3)
+            else if (catSelector.SelectedIndex == 3)
             {
                 ranWords.InsertRange(ranWords.Count, new string[] { "greenr", "blueer", "yellow", "redred", "orange", "indigo", "violet", "orange", "indigo", "violet" });
                 wordHints.InsertRange(wordHints.Count, new string[] { "gree", "blue", "yell", "redr", "oran", "indi", "viol", "orange", "indigo", "violet" });
-            // Canadian Provinces    
+            // Owls   
             }
-            else if (lengthSelector.SelectedIndex == 4)
+            else if (catSelector.SelectedIndex == 4)
             {
                 ranWords.InsertRange(ranWords.Count, new string[] { "broncos", "raiders", "packers", "steelers", "seahawks", "saints", "redskins", "falcons", "dolphins", "jaguars" });
                 wordHints.InsertRange(wordHints.Count, new string[] { "This team play at Mile High Stadium.", "This team famously played in the 'Black Hole'.", "This team won the very first Super Bowl.", "This team have won more Super Bowls than any other.", "This expansion team's 'Legion of Boom' secondary helped them win Super Bowl 48.", "This team's Super Bowl Victory in 2009 came soon after their city was devastated by Hurricane Katrina.", "This team have come under pressure to change their name in recent years.", "This team's nickname is the 'Dirty Birds'.", "This team are the only franchise to have recorded an undefeated season in the Super Bowl era.", "This Florida team's quarterback is Blake Bortles." });
             // NFL Teams 
             }
-            else if (lengthSelector.SelectedIndex == 5)
+            else if (catSelector.SelectedIndex == 5)
             {
                 ranWords.InsertRange(ranWords.Count, new string[] { "greenerr", "blueerrr", "yellower", "redreder", "orangerr", "indigoer", "violeter", "orangerr", "indigoer", "violeter" });
                 wordHints.InsertRange(wordHints.Count, new string[] { "grese", "brlue", "yelal", "redsr", "toran", "iandi", "viaol", "orangerr", "indigoer", "violeter" });
@@ -188,12 +187,12 @@ namespace hangManGame
         {
             guessResponse.Text = resetResponse();
             guessedLetters.Text = resetResponse();
-            feedbackThumb.Text = resetFeedback();
+            resetFeedback();
             resetQuiz();
             quizStarted = true;
-            if (lengthSelector.Text == "Select a length:")
+            if (catSelector.Text == "Select a category:")
             {
-                errorDisplay.Text = "Please select a word length";
+                errorDisplay.Text = "Please select a category";
                 errorPanel.Visible = true;
             }
             else
@@ -235,7 +234,7 @@ namespace hangManGame
                 if (answerMatch == answer)
                 {
                     guessResponse.Text = "You got it! The word was " + answer;
-                    feedbackThumb.Text = "&#128402";
+                    feedbackThumb.Attributes["class"] = "fas fa-thumbs-up";
                     guessCheck = false;
                     guessButton.Enabled = false;
                     startButton.Enabled = true;
@@ -245,25 +244,25 @@ namespace hangManGame
                 else if (dupeCheck == true)
                 {
                     guessResponse.Text = "You already guessed that one";
-                    feedbackThumb.Text = "&#128401";
+                    feedbackThumb.Attributes["class"] = "fas fa-hand-point-left";
                     dupeCheck = false;
                     guessCheck = false;
                 }
                 else
                 {
                     guessResponse.Text = "Well Done! Keep Guessing";
-                    feedbackThumb.Text = "&#128402";
+                    feedbackThumb.Attributes["class"] = "fas fa-thumbs-up";
                     guessCheck = false;
                 }
             }
             else
             {
-
+                
                 dupeCheck = CheckDupe(guessedLetters.Text, guess.Text);
                 if (dupeCheck)
                 {
                     guessResponse.Text = "You already guessed that one";
-                    feedbackThumb.Text = "&#128401";
+                    feedbackThumb.Attributes["class"] = "fas fa-hand-point-left";
                 }
 
                 else
@@ -277,28 +276,28 @@ namespace hangManGame
                         lifeOne.Visible = true;
                         
                         guessResponse.Text = "Incorrect, guess again";
-                        feedbackThumb.Text = "&#128403";
+                        feedbackThumb.Attributes["class"] = "fas fa-thumbs-down"; 
                     }
                     else if (lives == 2)
                     {
                         lifeOne.Visible = false;
                         lifeTwo.Visible = true;
                         guessResponse.Text = "Incorrect, guess again";
-                        feedbackThumb.Text = "&#128403";
+                        feedbackThumb.Attributes["class"] = "fas fa-thumbs-down";
                     }
                     else if (lives == 3)
                     {
                         lifeTwo.Visible = false;
                         lifeThree.Visible = true;
                         guessResponse.Text = "Incorrect, guess again";
-                        feedbackThumb.Text = "&#128403";
+                        feedbackThumb.Attributes["class"] = "fas fa-thumbs-down";
                     }
                     else if (lives == 4)
                     {
                         lifeThree.Visible = false;
                         lifeFour.Visible = true;
                         guessResponse.Text = "Incorrect, guess again";
-                        feedbackThumb.Text = "&#128403";
+                        feedbackThumb.Attributes["class"] = "fas fa-thumbs-down";
                     }
                     else if (lives == 5)
                     {
@@ -306,7 +305,7 @@ namespace hangManGame
                         lifeFive.Visible = true;
                         guessButton.Enabled = false;
                         guessResponse.Text = "You lost, the word was " + answer;
-                        feedbackThumb.Text = "&#128403";
+                        feedbackThumb.Attributes["class"] = "fas fa-thumbs-down";
                         startButton.Enabled = true;
                         startButton.Text = "Try again";
 

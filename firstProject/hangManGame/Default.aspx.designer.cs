@@ -67,13 +67,13 @@ namespace hangManGame {
         protected global::System.Web.UI.WebControls.Button quitButton;
         
         /// <summary>
-        /// lengthSelector control.
+        /// catSelector control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList lengthSelector;
+        protected global::System.Web.UI.WebControls.DropDownList catSelector;
         
         /// <summary>
         /// title control.

@@ -6,49 +6,53 @@
 <head runat="server">
     <title>Hangman Game</title>
     <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com/css?family=Pirata+One" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
     <link rel="stylesheet" type="text/css" href="Content/main.css" />
 </head>
 <body>
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-        
+
 
         <div id="background">
-             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <ContentTemplate>
 
-            <header id="navigation">
+                    <header id="navigation">
 
-                <asp:Button ID="startButton" CssClass="allButton" runat="server" Text="Start" OnClick="startButton_Click" />
-                <%-- Modify display when the button is disabled --%>
-                <asp:Button ID="aboutButton" CssClass="allButton" runat="server" Text="About" OnClick="aboutButton_Click" />
-                <asp:Button ID="quitButton" CssClass="allButton" runat="server" Text="Quit" OnClick="Quit_Click" />
-                <asp:DropDownList ID="lengthSelector" runat="server">
-                    <asp:ListItem>Select a length:</asp:ListItem>
-                    <asp:ListItem>Bands</asp:ListItem>
-                    <asp:ListItem>Historical Figures</asp:ListItem>
-                    <asp:ListItem>Canadian Provinces</asp:ListItem>
-                    <asp:ListItem>NFL Teams</asp:ListItem>
-                    <asp:ListItem>Something Else</asp:ListItem>
-                </asp:DropDownList>
-                <asp:Label ID="title" runat="server" Text="Hangman Game"></asp:Label>
-            </header>
-            <asp:Panel ID="errorPanel" runat="server" Visible="False">
-                <asp:Label ID="errorDisplay" runat="server" Text=""></asp:Label>
-            </asp:Panel>
+                        <asp:Button ID="startButton" CssClass="allButton" runat="server" Text="Start" OnClick="startButton_Click" />
+                        <%-- Modify display when the button is disabled --%>
+                        <asp:Button ID="aboutButton" CssClass="allButton" runat="server" Text="About" OnClick="aboutButton_Click" />
+                        <asp:Button ID="quitButton" CssClass="allButton" runat="server" Text="Quit" OnClick="Quit_Click" />
+                        <asp:DropDownList ID="catSelector" runat="server">
+                            <asp:ListItem>Select a category:</asp:ListItem>
+                            <asp:ListItem>Bands</asp:ListItem>
+                            <asp:ListItem>Historical Figures</asp:ListItem>
+                            <asp:ListItem>Owl Species</asp:ListItem>
+                            <asp:ListItem>NFL Teams</asp:ListItem>
+                            <asp:ListItem>Something Else</asp:ListItem>
+                        </asp:DropDownList>
+                        <asp:Label ID="title" runat="server" Text="Hangman Game"></asp:Label>
+                    </header>
+                    <asp:Panel ID="errorPanel" runat="server" Visible="False">
+                        <asp:Label ID="errorDisplay" runat="server" Text=""></asp:Label>
+                    </asp:Panel>
                     <asp:Panel ID="Panel3" runat="server" Visible="False">
                         <h2>About this project</h2>
                         <p>This is a classic Hangman game built to demonstrate understanding of ASP.NET Webforms, HTML, C# & CSS.</p>
                         <p>To play the game:</p>
                         <ul>
-                           <li>Choose a subject and click start!</li>
+                            <li>Choose a category and click start!</li>
                             <li>Guess a letter and click the button to see if you are right.</li>
                             <li>You can guess 5 incorrect letters before you lose.</li>
-                          <li>If you're struggling click the hint button to get some help.</li>
-                          <li>Click the quit button to give up.</li>
-                        </ul><br />
-                        <asp:Button ID="closeAboutButton" runat="server" CssClass="allButton" Text="Close" OnClick="closeAboutButton_Click" /><br />
-                        <footer> Copyright &#169; Archibald Owen 2018 </footer>
+                            <li>If you're struggling click the hint button to get some help.</li>
+                            <li>Click the quit button to give up.</li>
+                        </ul>
+                       <asp:Button ID="closeAboutButton" runat="server" CssClass="allButton" Text="Close" OnClick="closeAboutButton_Click" /><br />
+                       <br />
+                         <footer>Copyright &#169; Archibald Owen 2018 </footer>
+                        <br />
                     </asp:Panel>
                     <asp:Panel ID="Panel1" runat="server" Visible="False">
                         <asp:Image ID="gallows" CssClass="hangImg" src="Content/gallowsTrans.png" runat="server" Visible="True" />
@@ -88,14 +92,14 @@
                                 <asp:Label ID="letter11" CssClass="visLabelHidden" runat="server" Text=""></asp:Label>
                                 <asp:Label ID="space12" CssClass="visLabelHidden" runat="server" Text=" "></asp:Label>
                                 <asp:Label ID="letter12" CssClass="visLabelHidden" runat="server" Text=""></asp:Label>
-                                </ul>
+                            </ul>
                         </asp:Panel>
-                        <div>
+                        <div id="guessItems">
                             <ul id="guessLine">
                                 <asp:Label ID="userInstruction" runat="server" Text="Guess a letter: "></asp:Label>
                                 <asp:TextBox ID="guess" runat="server" AutoCompleteType="Disabled" MaxLength="1"></asp:TextBox>
                                 <asp:Button ID="guessButton" CssClass="allButton" runat="server" Text="Guess" OnClick="guessButton_Click" />
-                                <asp:Label ID="feedbackThumb" runat="server" Text="" Font-Bold="True"></asp:Label>
+                                <asp:Label ID="feedbackThumb"  runat="server" Text="" Font-Bold="True"></asp:Label>
                             </ul>
                         </div>
                         <div>

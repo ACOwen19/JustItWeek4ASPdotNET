@@ -5,24 +5,25 @@ body {
     background-image: url(/Content/blackboardBG.png);
     background-position: center 0;
     overflow-y: hidden;
-    font-family: sans-serif, 'Times New Roman';
-    font-size: 12pt;
+    font-family: 'Pirata One', cursive;
+    font-size: 14pt;
 }
 
 .allButton {
-    color: rgb(255, 255, 255);
-    background-color: rgb(141, 141, 141);
-    border: 1px solid rgb(0, 0, 0);
+    color: rgb(29, 33, 32);
+    background-color: rgb(188, 213, 209);
+    border: 2px solid rgb(90, 92, 81);
+    font-weight:bold;
     cursor: pointer;
     border-radius: 5px 5px;
     margin: 0 0.5vw;
-    font-family: sans-serif, 'Times New Roman';
+    font-family: 'Pirata One', cursive;
 }
 
 #navigation {
     height: 6vh;
-    background-color: rgb(9, 8, 8);
-    border-bottom: 2px solid rgb(200,200,200);
+    background-color: rgb(29, 33, 32);
+    border-bottom: 2px solid rgb(188, 213, 209);
     position: fixed;
     top: 0;
     left: 0;
@@ -41,21 +42,22 @@ body {
 }
 
 #title {
-    margin: 0.5vh 40% 0 40%;
+    margin: 0 40% 0 40%;
     width: 20%;
-    color: rgb(200, 200, 200);
+    color: rgb(188, 213, 209);
     font-size: 2em;
     text-align: center;
     z-index: 125;
     position: fixed;
 }
 
-#lengthSelector {
+#catSelector {
     margin: 1.5vh 74% 0 16%;
     height: 3vh;
     width: 10%;
     position: fixed;
     z-index: 120;
+    border-radius: 5px 5px;
 }
 
 #aboutButton {
@@ -83,29 +85,28 @@ body {
     justify-content: center;
     padding-top: 10.5vh;
     margin: 0 5%;
-    background-color: rgba(91, 84, 84, 0.5);
+    background-color: rgba(90, 92, 81, 0.5);
 }
 
 #Panel2 {
     margin: 0 5% 2% 5%;
     padding-bottom: 25vh;
-    background-color: rgba(91, 84, 84, 0.5);
-    color: rgb(255, 255, 255);
+    background-color: rgba(90, 92, 81, 0.5);
+    color: rgb(188, 213, 209);
 }
 
 #Panel3 {
     margin: 0 5%;
-    background-color: rgba(91, 84, 84, 0.5);
-    color: rgb(255, 255, 255);
-    display: flex;
-    justify-content: center;
-}
+    background-color: rgba(90, 92, 81, 0.5);
+    color: rgb(188, 213, 209);
+    padding-top: 6vh;
+    padding-left: 1vw;
+  }
 
 #closeAboutButton {
-    height: 50px;
+    height: 4vh;
     width: 10%;
     font-size: 16pt;
-
 }
 
 #Panel2 div {
@@ -154,7 +155,16 @@ body {
     margin: 0 0.5vw;
 }
 
-#feedbackThumb {
+#guess {
+    border-radius: 5px 5px;
+}
+
+#guessButton {
+    width: 5%;
+}
+
+#hintButton {
+    width: 5%;
 }
 
 #guessedLettersC {

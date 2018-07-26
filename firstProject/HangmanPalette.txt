@@ -1,0 +1,5 @@
+Color Palette
+rgb(29, 33, 32) Almost Black
+rgb(90, 92, 81) Dark Gray
+rgb(186, 144, 119) Tan
+rgb(188, 213, 209) Cloudy blue
