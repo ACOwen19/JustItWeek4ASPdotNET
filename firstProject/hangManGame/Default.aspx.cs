@@ -189,7 +189,6 @@ namespace hangManGame
             guessedLetters.Text = resetResponse();
             resetFeedback();
             resetQuiz();
-            quizStarted = true;
             if (catSelector.Text == "Select a category:")
             {
                 errorDisplay.Text = "Please select a category";
@@ -197,6 +196,7 @@ namespace hangManGame
             }
             else
             {
+                quizStarted = true;
                 startButton.Enabled = false;
                 guessButton.Enabled = true;
                 Panel1.Visible = true;
@@ -233,7 +233,7 @@ namespace hangManGame
                 hintButton.Visible = false;
                 if (answerMatch == answer)
                 {
-                    guessResponse.Text = "You got it! The word was " + answer;
+                    guessResponse.Text = "You got it! The answer was " + answer.ToUpper();
                     feedbackThumb.Attributes["class"] = "fas fa-thumbs-up";
                     guessCheck = false;
                     guessButton.Enabled = false;
@@ -304,7 +304,7 @@ namespace hangManGame
                         lifeFour.Visible = false;
                         lifeFive.Visible = true;
                         guessButton.Enabled = false;
-                        guessResponse.Text = "You lost, the word was " + answer;
+                        guessResponse.Text = "You lost, The answer was " + answer.ToUpper();
                         feedbackThumb.Attributes["class"] = "fas fa-thumbs-down";
                         startButton.Enabled = true;
                         startButton.Text = "Try again";
@@ -328,7 +328,7 @@ namespace hangManGame
             lifeFour.Visible = false;
             lifeFive.Visible = true;
             guessButton.Enabled = false;
-            guessResponse.Text = "You quit, the word was " + answer;
+            guessResponse.Text = "You quit, The answer was " + answer;
             startButton.Enabled = true;
             startButton.Text = "Try again";
         }
@@ -342,6 +342,7 @@ namespace hangManGame
         protected void aboutButton_Click(object sender, EventArgs e)
         {
             Panel3.Visible = true;
+            errorPanel.Visible = false;
             Panel1.Visible = false;
             Panel2.Visible = false;            
         }

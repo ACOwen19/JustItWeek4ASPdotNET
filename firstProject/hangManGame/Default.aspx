@@ -13,14 +13,10 @@
 <body>
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-
-
         <div id="background">
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <ContentTemplate>
-
                     <header id="navigation">
-
                         <asp:Button ID="startButton" CssClass="allButton" runat="server" Text="Start" OnClick="startButton_Click" />
                         <%-- Modify display when the button is disabled --%>
                         <asp:Button ID="aboutButton" CssClass="allButton" runat="server" Text="About" OnClick="aboutButton_Click" />

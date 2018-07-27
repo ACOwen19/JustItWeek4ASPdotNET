@@ -21,7 +21,7 @@ body {
 }
 
 #navigation {
-    height: 6vh;
+    height: 7.5%;
     background-color: rgb(29, 33, 32);
     border-bottom: 2px solid rgb(188, 213, 209);
     position: fixed;
@@ -32,11 +32,12 @@ body {
 }
 
 #startButton {
-    margin: 0.5vh 85% 0 5%;
+    margin: 0% 85% 0% 5%;
     width: 10%;
     z-index: 105;
     position: fixed;
-    height: 5vh;
+    top: 1.25%;
+    height: 5%;
     font-size: 16pt;
     display: block;
 }
@@ -52,8 +53,9 @@ body {
 }
 
 #catSelector {
-    margin: 1.5vh 74% 0 16%;
-    height: 3vh;
+    margin: 0 74% 0 16%;
+    top: 2.5%;
+    height: 3%;
     width: 10%;
     position: fixed;
     z-index: 120;
@@ -61,21 +63,23 @@ body {
 }
 
 #aboutButton {
-    margin: 0.5vh 16% 0 74%;
+    margin: 0 16% 0 74%;
     width: 10%;
     z-index: 110;
     position: fixed;
-    height: 5vh;
+    top: 1.25%;
+    height: 5%;
     font-size: 16pt;
     display: block;
 }
 
 #quitButton {
-    margin: 0.5vh 5% 0 85%;
+    margin: 0 5% 0 85%;
     width: 10%;
     z-index: 115;
     position: fixed;
-    height: 5vh;
+    top: 1.25%;
+    height: 5%;
     font-size: 16pt;
     display: block;
 }
@@ -119,7 +123,7 @@ body {
     font-size: 1em;
     position: absolute;
     text-align: left;
-    top: 7%;
+    top: 9%;
     left: 16%;
     color: rgb(200,200,200);
     font-weight: bold;
