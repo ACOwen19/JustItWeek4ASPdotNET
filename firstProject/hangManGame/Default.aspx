@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Pirata+One" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
     <link rel="stylesheet" type="text/css" href="Content/main.css" />
+    <link rel="shortcut icon" href="http://pngimages.net/sites/default/files/h--letter-png-image-68690.png" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -18,7 +19,6 @@
                 <ContentTemplate>
                     <header id="navigation">
                         <asp:Button ID="startButton" CssClass="allButton" runat="server" Text="Start" OnClick="startButton_Click" />
-                        <%-- Modify display when the button is disabled --%>
                         <asp:Button ID="aboutButton" CssClass="allButton" runat="server" Text="About" OnClick="aboutButton_Click" />
                         <asp:Button ID="quitButton" CssClass="allButton" runat="server" Text="Quit" OnClick="Quit_Click" />
                         <asp:DropDownList ID="catSelector" runat="server">
@@ -27,7 +27,7 @@
                             <asp:ListItem>Historical Figures</asp:ListItem>
                             <asp:ListItem>Owl Species</asp:ListItem>
                             <asp:ListItem>NFL Teams</asp:ListItem>
-                            <asp:ListItem>Something Else</asp:ListItem>
+                            <asp:ListItem>Cooking Herbs</asp:ListItem>
                         </asp:DropDownList>
                         <asp:Label ID="title" runat="server" Text="Hangman Game"></asp:Label>
                     </header>

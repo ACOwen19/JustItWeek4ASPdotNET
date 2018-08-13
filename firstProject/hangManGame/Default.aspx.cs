@@ -33,6 +33,7 @@ namespace hangManGame
         public void resetQuiz()
         {
             ranWords.Clear();
+            wordHints.Clear();
             generateWords();
             Random rnd = new Random();
             randNum = rnd.Next(0, 10);
@@ -85,14 +86,14 @@ namespace hangManGame
             }
             else if (catSelector.SelectedIndex == 2)
             {
-                ranWords.InsertRange(ranWords.Count, new string[] { "green", "bluee", "yello", "redre", "orang", "indig", "viole", "orang", "indig", "viole" });
-                wordHints.InsertRange(wordHints.Count, new string[] { "gree", "blue", "yell", "redr", "oran", "indi", "viol", "orang", "indig", "viole" });
+                ranWords.InsertRange(ranWords.Count, new string[] { "wellington", "herodotus", "boudica", "curie", "lovelace", "armstrong", "Sun Tzu", "elizabeth i", "parks", "tolkien" });
+                wordHints.InsertRange(wordHints.Count, new string[] { "Known as the 'Iron Duke' this general became Prime-minister later in life.", "Known as the 'Father of History'.", "Queen of the Iceni who led an failed rebellion against the Romans.", "The first woman to win the Nobel Prize.", "The first computer programer and only legitimate child of Lord Byron.", "The first man to walk on the moon.", "General and author of 'The art of war'.", "Also known as the Virgin Queen.", "This person's protest galvanised the American civil rights movement.", "Progenitor of many modern fantasy tropes." });
             // Historical Figures
             }
             else if (catSelector.SelectedIndex == 3)
             {
-                ranWords.InsertRange(ranWords.Count, new string[] { "barn", "tawny", "eagle", "great grey", "tengmalns", "screech", "snowy", "little", "dd", "violet" });
-                wordHints.InsertRange(wordHints.Count, new string[] { "Also known as a , this owl was seen as an omen of death", "This russet colored owl is usually found in ", "The largest owl native to the UK", "Usually found in gray", "Named after a swedish ornithologist, also known as a Boreal owl.", "This owl is named after its piercing hoot.", "A native of the arctic circle and occasional visitor to Scotland.", "The smallest owl native to the UK.", "indigo", "violet" });
+                ranWords.InsertRange(ranWords.Count, new string[] { "barn", "tawny", "eagle", "great grey", "tengmalns", "screech", "snowy", "little", "scops", "crested" });
+                wordHints.InsertRange(wordHints.Count, new string[] { "Also known as a Ghost Owl, this species was see as an ill omen.", "This russet colored owl is non-migratory and highly teritorial.", "The largest owl native to the UK.", "This species is the longest owl in the world.", "Named after a Swedish ornithologist, also known as a Boreal owl.", "This owl is named after its piercing hoot.", "A native of the arctic circle and occasional visitor to Scotland.", "The smallest owl native to the UK.", "There are over 45 different varieties of this species, spread across the world.", "The only member of the genus Lophostrix." });
             // Owls   
             }
             else if (catSelector.SelectedIndex == 4)
@@ -103,9 +104,9 @@ namespace hangManGame
             }
             else if (catSelector.SelectedIndex == 5)
             {
-                ranWords.InsertRange(ranWords.Count, new string[] { "greenerr", "blueerrr", "yellower", "redreder", "orangerr", "indigoer", "violeter", "orangerr", "indigoer", "violeter" });
-                wordHints.InsertRange(wordHints.Count, new string[] { "grese", "brlue", "yelal", "redsr", "toran", "iandi", "viaol", "orangerr", "indigoer", "violeter" });
-            // Something Else
+                ranWords.InsertRange(ranWords.Count, new string[] { "rosemary", "basil", "oregano", "parsley", "sage", "thyme", "chives", "coriander", "taragon", "lovage" });
+                wordHints.InsertRange(wordHints.Count, new string[] { "Traditionally used while roasting lamb.", "A main ingredient in pesto.", "The staple herb of Italian-American cuisine.", "Commonly used to garnish potato dishes.", "Fried in butter this is a traditional accompaniment to liver.", "Whole sprigs are used to flavor sauces before being removed.", "Finely chopped and traditionally served with fish or soured cream.", "Also known as Cilantro in North America.", "Traditonally paired with chicken, the main component of sauce Béarnaise", "A cordial of this is traditionally mixed with brandy as a winter drink." });
+            // Cooking Herbs
             }
 
         }
@@ -234,12 +235,12 @@ namespace hangManGame
                 hintButton.Visible = false;
                 if (answerMatch == answer)
                 {
+                    startButton.Text = "Try another";
                     guessResponse.Text = "You got it! The answer was " + answer.ToUpper();
                     feedbackThumb.Attributes["class"] = "fas fa-thumbs-up";
                     guessCheck = false;
                     guessButton.Enabled = false;
                     startButton.Enabled = true;
-                    startButton.Text = "Try another";
                     quitButton.Enabled = false;
 
                 }
