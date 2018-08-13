@@ -1,0 +1,207 @@
+﻿
+/* Colors
+rgb(29, 33, 32) Almost Black
+rgb(90, 92, 81) Dark Gray
+rgb(186, 144, 119) Tan
+rgb(188, 213, 209) Cloudy blue
+
+Alt 
+rgb(22, 23, 79) Dark Blue
+rgb(150, 48, 25) Brown
+rgb(246, 241, 237) Just Off White
+rgb(102, 116, 103) Grey
+
+*/
+
+
+
+
+body {
+    background-image: url(/Content/blackboardBG.png);
+    background-position: center 0;
+    overflow-y: hidden;
+    font-family: 'Pirata One', cursive;
+    font-size: 14pt;
+}
+
+.allButton {
+    color: rgb(29, 33, 32);
+    background-color: rgb(188, 213, 209);
+    border: 2px solid rgb(90, 92, 81);
+    font-weight:bold;
+    cursor: pointer;
+    border-radius: 5px 5px;
+    margin: 0 0.5vw;
+    font-family: 'Pirata One', cursive;
+   
+}
+
+#navigation {
+    height: 7.5%;
+    background-color: rgb(29, 33, 32);
+    border-bottom: 2px solid rgb(188, 213, 209);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+#startButton {
+    margin: 0% 85% 0% 5%;
+    width: 10%;
+    z-index: 105;
+    position: fixed;
+    top: 1.25%;
+    height: 5%;
+    font-size: 16pt;
+    display: block;
+}
+
+#title {
+    margin: 0 40% 0 40%;
+    width: 20%;
+    color: rgb(188, 213, 209);
+    font-size: 2em;
+    text-align: center;
+    z-index: 125;
+    position: fixed;
+}
+
+#catSelector {
+    margin: 0 74% 0 16%;
+    top: 2.5%;
+    height: 3%;
+    width: 10%;
+    position: fixed;
+    z-index: 120;
+    border-radius: 5px 5px;
+}
+
+#aboutButton {
+    margin: 0 16% 0 74%;
+    width: 10%;
+    z-index: 110;
+    position: fixed;
+    top: 1.25%;
+    height: 5%;
+    font-size: 16pt;
+    display: block;
+}
+
+#quitButton {
+    margin: 0 5% 0 85%;
+    width: 10%;
+    z-index: 115;
+    position: fixed;
+    top: 1.25%;
+    height: 5%;
+    font-size: 16pt;
+    display: block;
+}
+
+#Panel1 {
+    display: flex;
+    justify-content: center;
+    padding-top: 10.5vh;
+    margin: 0 5%;
+    background-color: rgba(90, 92, 81, 0.5);
+}
+
+#Panel2 {
+    margin: 0 5% 2% 5%;
+    padding-bottom: 25vh;
+    background-color: rgba(90, 92, 81, 0.5);
+    color: rgb(188, 213, 209);
+}
+
+#Panel3 {
+    margin: 0 5%;
+    background-color: rgba(90, 92, 81, 0.5);
+    color: rgb(188, 213, 209);
+    padding-top: 6vh;
+    padding-left: 1vw;
+  }
+
+#closeAboutButton {
+    height: 5%;
+    width: 10%;
+    font-size: 16pt;
+}
+
+#Panel2 div {
+    display: block;
+    padding: .5vh 0;
+    text-align: center;
+}
+
+#errorPanel {
+    font-size: 1em;
+    position: absolute;
+    text-align: left;
+    top: 9%;
+    left: 16%;
+    color: rgb(200,200,200);
+    font-weight: bold;
+}
+
+#visLabels {
+    display: flex;
+    justify-content: center;
+}
+
+.visLabel {
+    font-size: 3em;
+    text-transform: uppercase;
+    width: 40px;
+}
+
+.visLabelHidden {
+}
+
+
+#guessLine {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5em;
+    margin: .5em 0;
+}
+
+#userInstruction {
+    margin: 0 0.5vw;
+}
+
+#guessResponse {
+    margin: 0 0.5vw;
+}
+
+#guess {
+    border-radius: 5px 5px;
+}
+
+#guessButton {
+    width: 5%;
+}
+
+#hintButton {
+    width: 5%;
+}
+
+#guessedLettersC {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5em;
+    margin: .5em 0;
+}
+
+#guessedLetters {
+    text-transform: uppercase;
+    margin-left: 5px;
+}
+
+#guessResponseC {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5em;
+    margin: .5em 0;
+}

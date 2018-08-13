@@ -23,7 +23,7 @@ namespace MVCMovies18.Models
 
         [Display(Name = "Release Date")] // Changes the label for the data to something other than the db column heading
         [DataType(DataType.Date)] // Displays data as date only rather than date/time
-        [DisplayFormat(DataFormatString = "{0:dd-MMM-yyyy}", ApplyFormatInEditMode = true)] 
+        [DisplayFormat(DataFormatString = "{0:dd-MMM-yyyy}", ApplyFormatInEditMode = false)] 
         // Changes the display format of the date, works in IE & FF, not Chrome or edge
         public Nullable<System.DateTime> ReleaseDate { get; set; }
 

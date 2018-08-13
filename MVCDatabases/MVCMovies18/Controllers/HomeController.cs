@@ -12,6 +12,7 @@ namespace MVCMovies18.Controllers
     public class HomeController : Controller
     {
         private MoviesACO18Entities db = new MoviesACO18Entities();
+        // Declaring a DB Connection object
 
         public ActionResult Index(string SearchString, string movieGenre)
         {
@@ -34,7 +35,7 @@ namespace MVCMovies18.Controllers
             select m;
 
 
-            if (!String.IsNullOrEmpty(movieGenre)) // If the dropdown hasn't been clicked or is on the defualt value
+            if (!String.IsNullOrEmpty(movieGenre)) // If the dropdown hasn't been clicked or is on the default value
             {
                 movies = movies.Where(x => x.Genre == (movieGenre));
             }

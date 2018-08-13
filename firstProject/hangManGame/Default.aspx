@@ -45,18 +45,20 @@
                             <li>If you're struggling click the hint button to get some help.</li>
                             <li>Click the quit button to give up.</li>
                         </ul>
-                       <asp:Button ID="closeAboutButton" runat="server" CssClass="allButton" Text="Close" OnClick="closeAboutButton_Click" /><br />
-                       <br />
-                         <footer>Copyright &#169; Archibald Owen 2018 </footer>
+                        <asp:Button ID="closeAboutButton" runat="server" CssClass="allButton" Text="Close" OnClick="closeAboutButton_Click" /><br />
+                        <br />
+                        <footer>Copyright &#169; Archibald Owen 2018 </footer>
                         <br />
                     </asp:Panel>
                     <asp:Panel ID="Panel1" runat="server" Visible="False">
-                        <asp:Image ID="gallows" CssClass="hangImg" src="Content/gallowsTrans.png" runat="server" Visible="True" />
-                        <asp:Image ID="lifeOne" CssClass="hangImg" src="Content/lifeOneTrans.png" runat="server" Visible="False" />
-                        <asp:Image ID="lifeTwo" CssClass="hangImg" src="Content/lifeTwoTrans.png" runat="server" Visible="False" />
-                        <asp:Image ID="lifeThree" CssClass="hangImg" src="Content/lifeThreeTrans.png" runat="server" Visible="False" />
-                        <asp:Image ID="lifeFour" CssClass="hangImg" src="Content/lifeFourTrans.png" runat="server" Visible="False" />
-                        <asp:Image ID="lifeFive" CssClass="hangImg" src="Content/testGifTwo.gif" runat="server" Visible="False" />
+                        <div id="imageStack">
+                            <asp:Image ID="gallows" CssClass="hangImg" src="Content/gallows.png" runat="server" Visible="True" />
+                            <asp:Image ID="lifeOne" CssClass="hangImg" src="Content/lifeOne.png" runat="server" Visible="False" />
+                            <asp:Image ID="lifeTwo" CssClass="hangImg" src="Content/lifeTwo.png" runat="server" Visible="False" />
+                            <asp:Image ID="lifeThree" CssClass="hangImg" src="Content/lifeThree.png" runat="server" Visible="False" />
+                            <asp:Image ID="lifeFour" CssClass="hangImg" src="Content/lifeFour.png" runat="server" Visible="False" />
+                            <asp:Image ID="lifeFive" CssClass="hangImg" src="Content/HangGif.gif" runat="server" Visible="False" />
+                        </div>
                     </asp:Panel>
 
                     <asp:Panel ID="Panel2" runat="server" Visible="False">
@@ -95,7 +97,7 @@
                                 <asp:Label ID="userInstruction" runat="server" Text="Guess a letter: "></asp:Label>
                                 <asp:TextBox ID="guess" runat="server" AutoCompleteType="Disabled" MaxLength="1"></asp:TextBox>
                                 <asp:Button ID="guessButton" CssClass="allButton" runat="server" Text="Guess" OnClick="guessButton_Click" />
-                                <asp:Label ID="feedbackThumb"  runat="server" Text="" Font-Bold="True"></asp:Label>
+                                <asp:Label ID="feedbackThumb" runat="server" Text="" Font-Bold="True"></asp:Label>
                             </ul>
                         </div>
                         <div>
@@ -104,10 +106,10 @@
                                 <asp:Button ID="hintButton" CssClass="allButton" runat="server" Text="Hint" OnClick="hintButton_Click" Visible="False" />
                             </ul>
                         </div>
-                        <%-- Find Some Way of stopping this from jumping the text around --%>
+                       
                         <div>
-                            <ul id="guessedLettersC">
-                                <asp:Label ID="guessedLettersTitle" runat="server" Text="Incorrect Letters: "></asp:Label>
+                            <ul id="guessedLettersC" >
+                                <asp:Label ID="guessedLettersTitle" runat="server" Text="Incorrect Letters: " visible="false"></asp:Label>
                                 <asp:Label ID="guessedLetters" runat="server" Text=""></asp:Label>
                             </ul>
                         </div>

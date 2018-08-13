@@ -91,8 +91,8 @@ namespace hangManGame
             }
             else if (catSelector.SelectedIndex == 3)
             {
-                ranWords.InsertRange(ranWords.Count, new string[] { "greenr", "blueer", "yellow", "redred", "orange", "indigo", "violet", "orange", "indigo", "violet" });
-                wordHints.InsertRange(wordHints.Count, new string[] { "gree", "blue", "yell", "redr", "oran", "indi", "viol", "orange", "indigo", "violet" });
+                ranWords.InsertRange(ranWords.Count, new string[] { "barn", "tawny", "eagle", "great grey", "tengmalns", "screech", "snowy", "little", "dd", "violet" });
+                wordHints.InsertRange(wordHints.Count, new string[] { "Also known as a , this owl was seen as an omen of death", "This russet colored owl is usually found in ", "The largest owl native to the UK", "Usually found in gray", "Named after a swedish ornithologist, also known as a Boreal owl.", "This owl is named after its piercing hoot.", "A native of the arctic circle and occasional visitor to Scotland.", "The smallest owl native to the UK.", "indigo", "violet" });
             // Owls   
             }
             else if (catSelector.SelectedIndex == 4)
@@ -199,6 +199,7 @@ namespace hangManGame
                 quizStarted = true;
                 startButton.Enabled = false;
                 guessButton.Enabled = true;
+                quitButton.Enabled = true;
                 Panel1.Visible = true;
                 Panel2.Visible = true;
                 UpdateVisLabels(99, answerChars);
@@ -239,6 +240,7 @@ namespace hangManGame
                     guessButton.Enabled = false;
                     startButton.Enabled = true;
                     startButton.Text = "Try another";
+                    quitButton.Enabled = false;
 
                 }
                 else if (dupeCheck == true)
@@ -274,7 +276,7 @@ namespace hangManGame
                     {
                         gallows.Visible = false;
                         lifeOne.Visible = true;
-                        
+                        guessedLettersTitle.Visible = true;
                         guessResponse.Text = "Incorrect, guess again";
                         feedbackThumb.Attributes["class"] = "fas fa-thumbs-down"; 
                     }
@@ -304,6 +306,7 @@ namespace hangManGame
                         lifeFour.Visible = false;
                         lifeFive.Visible = true;
                         guessButton.Enabled = false;
+                        hintButton.Visible = false;
                         guessResponse.Text = "You lost, The answer was " + answer.ToUpper();
                         feedbackThumb.Attributes["class"] = "fas fa-thumbs-down";
                         startButton.Enabled = true;
@@ -327,8 +330,9 @@ namespace hangManGame
             lifeThree.Visible = false;
             lifeFour.Visible = false;
             lifeFive.Visible = true;
+            hintButton.Visible = false;
             guessButton.Enabled = false;
-            guessResponse.Text = "You quit, The answer was " + answer;
+            guessResponse.Text = "You quit, The answer was " + answer.ToUpper();
             startButton.Enabled = true;
             startButton.Text = "Try again";
         }
@@ -354,6 +358,12 @@ namespace hangManGame
             {
                 Panel1.Visible = true;
                 Panel2.Visible = true;
+            }
+
+            else
+            {
+                Panel1.Visible = false;
+                Panel2.Visible = false;
             }
         }
     }

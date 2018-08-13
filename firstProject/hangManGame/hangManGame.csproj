@@ -66,13 +66,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\gallowsTrans.png" />
-    <Content Include="Content\lifeFourTrans.png" />
+    <Content Include="Content\gallows.png" />
+    <Content Include="Content\HangGif.gif" />
+    <Content Include="Content\lifeFour.png" />
     <Content Include="Content\lifeOne.png" />
-    <Content Include="Content\lifeOneTrans.png" />
-    <Content Include="Content\lifeThreeTrans.png" />
-    <Content Include="Content\lifeTwoTrans.png" />
-    <Content Include="Content\testGifTwo.gif" />
+    <Content Include="Content\lifeThree.png" />
+    <Content Include="Content\lifeTwo.png" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

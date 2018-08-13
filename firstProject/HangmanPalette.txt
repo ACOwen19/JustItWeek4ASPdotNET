@@ -3,3 +3,9 @@ rgb(29, 33, 32) Almost Black
 rgb(90, 92, 81) Dark Gray
 rgb(186, 144, 119) Tan
 rgb(188, 213, 209) Cloudy blue
+
+Alt 
+rgb(22, 23, 79) Dark Blue
+rgb(150, 48, 25) Brown
+rgb(246, 241, 237) Just Off White
+rgb(102, 116, 103) Grey

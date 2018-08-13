@@ -1,4 +1,19 @@
 ﻿
+/* Colors
+rgb(29, 33, 32) Almost Black
+rgb(102, 116, 103) Dark Gray
+rgb(186, 144, 119) Tan
+rgb(246, 241, 237) Cloudy blue
+
+Alt 
+rgb(22, 23, 79) Dark Blue
+rgb(150, 48, 25) Brown
+rgb(246, 241, 237) Just Off White
+rgb(102, 116, 103) Grey
+
+*/
+
+
 
 
 body {
@@ -10,20 +25,26 @@ body {
 }
 
 .allButton {
-    color: rgb(29, 33, 32);
-    background-color: rgb(188, 213, 209);
-    border: 2px solid rgb(90, 92, 81);
+    color: rgb(22, 23, 79);
+    background-color: rgb(246, 241, 237);
+    border: 2px solid rgb(102, 116, 103);
     font-weight:bold;
     cursor: pointer;
     border-radius: 5px 5px;
     margin: 0 0.5vw;
     font-family: 'Pirata One', cursive;
+   
+}
+
+.aspNetDisabled {
+    color: rgb(191, 189, 187)!important;
+    cursor: none!important;
 }
 
 #navigation {
     height: 7.5%;
-    background-color: rgb(29, 33, 32);
-    border-bottom: 2px solid rgb(188, 213, 209);
+    background-color: rgb(22, 23, 79);
+    border-bottom: 2px solid rgb(246, 241, 237);
     position: fixed;
     top: 0;
     left: 0;
@@ -45,7 +66,7 @@ body {
 #title {
     margin: 0 40% 0 40%;
     width: 20%;
-    color: rgb(188, 213, 209);
+    color: rgb(246, 241, 237);
     font-size: 2em;
     text-align: center;
     z-index: 125;
@@ -87,28 +108,28 @@ body {
 #Panel1 {
     display: flex;
     justify-content: center;
-    padding-top: 10.5vh;
+    padding-top: 7.5vh;
     margin: 0 5%;
-    background-color: rgba(90, 92, 81, 0.5);
+    background-color: rgba(102, 116, 103, 0.5);
 }
 
 #Panel2 {
     margin: 0 5% 2% 5%;
     padding-bottom: 25vh;
-    background-color: rgba(90, 92, 81, 0.5);
-    color: rgb(188, 213, 209);
+    background-color: rgba(102, 116, 103, 0.5);
+    color: rgb(246, 241, 237);
 }
 
 #Panel3 {
     margin: 0 5%;
-    background-color: rgba(90, 92, 81, 0.5);
-    color: rgb(188, 213, 209);
+    background-color: rgba(102, 116, 103, 0.5);
+    color: rgb(246, 241, 237);
     padding-top: 6vh;
     padding-left: 1vw;
   }
 
 #closeAboutButton {
-    height: 4vh;
+    height: 5%;
     width: 10%;
     font-size: 16pt;
 }
@@ -125,13 +146,25 @@ body {
     text-align: left;
     top: 9%;
     left: 16%;
-    color: rgb(200,200,200);
+    color: rgb(246, 241, 237);
     font-weight: bold;
 }
+
+.hangImg {
+    height: 300px;
+    width: 300px;
+}
+
+#imageStack {
+    height: 300px!important;
+    width: 300px!important;
+}
+
 
 #visLabels {
     display: flex;
     justify-content: center;
+    margin: 0 0 .5em 0;
 }
 
 .visLabel {
@@ -148,7 +181,7 @@ body {
     display: flex;
     justify-content: center;
     font-size: 1.5em;
-    margin: .5em 0;
+    margin: 0 0 .5em 0;
 }
 
 #userInstruction {
@@ -157,6 +190,10 @@ body {
 
 #guessResponse {
     margin: 0 0.5vw;
+}
+
+#feedbackThumb {
+    color: rgb(22, 23, 79);
 }
 
 #guess {
@@ -175,7 +212,7 @@ body {
     display: flex;
     justify-content: center;
     font-size: 1.5em;
-    margin: .5em 0;
+    margin: 0 0 .5em 0;
 }
 
 #guessedLetters {
@@ -187,5 +224,5 @@ body {
     display: flex;
     justify-content: center;
     font-size: 1.5em;
-    margin: .5em 0;
+    margin: 0 0 .5em 0;
 }
