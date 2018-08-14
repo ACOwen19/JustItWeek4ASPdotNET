@@ -11,7 +11,7 @@ namespace hangManGame
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            quizStarted = false;
         }
 
         static List<string> ranWords = new List<string>();
