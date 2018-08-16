@@ -11,7 +11,7 @@ namespace hangManGame
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            quizStarted = false;
+        
         }
 
         static List<string> ranWords = new List<string>();
@@ -28,7 +28,7 @@ namespace hangManGame
         static bool dupeCheck = false;
         char userGuess = ' ';
         string answerMatch = "";
-        static bool quizStarted = false;
+        
 
         public void resetQuiz()
         {
@@ -53,7 +53,7 @@ namespace hangManGame
             lifeFive.Visible = false;
             lives = 0;
             hintButton.Visible = false;
-            quizStarted = false;
+           
             
         }
 
@@ -197,7 +197,7 @@ namespace hangManGame
             }
             else
             {
-                quizStarted = true;
+               
                 startButton.Enabled = false;
                 guessButton.Enabled = true;
                 quitButton.Enabled = true;
@@ -344,28 +344,6 @@ namespace hangManGame
             guessResponse.Text = hint;
         }
 
-        protected void aboutButton_Click(object sender, EventArgs e)
-        {
-            Panel3.Visible = true;
-            errorPanel.Visible = false;
-            Panel1.Visible = false;
-            Panel2.Visible = false;            
-        }
-
-        protected void closeAboutButton_Click(object sender, EventArgs e)
-        {
-            Panel3.Visible = false;
-            if (quizStarted == true)
-            {
-                Panel1.Visible = true;
-                Panel2.Visible = true;
-            }
-
-            else
-            {
-                Panel1.Visible = false;
-                Panel2.Visible = false;
-            }
-        }
+        
     }
 }

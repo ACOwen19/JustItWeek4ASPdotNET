@@ -18,3 +18,4 @@ C:\Users\archi\Documents\GitHub\JustItWeek4ASPdotNET\firstProject\hangManGame\bi
 C:\Users\archi\Documents\GitHub\JustItWeek4ASPdotNET\firstProject\hangManGame\obj\Release\hangManGame.csprojResolveAssemblyReference.cache
 C:\Users\archi\Documents\GitHub\JustItWeek4ASPdotNET\firstProject\hangManGame\obj\Release\hangManGame.dll
 C:\Users\archi\Documents\GitHub\JustItWeek4ASPdotNET\firstProject\hangManGame\obj\Release\hangManGame.pdb
+C:\Users\archi\Documents\GitHub\JustItWeek4ASPdotNET\firstProject\hangManGame\bin\AjaxControlToolkit.dll

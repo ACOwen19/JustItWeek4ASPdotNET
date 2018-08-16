@@ -7,10 +7,11 @@
     <title>Hangman Game</title>
     <meta charset="utf-8" />
     <link href="https://fonts.googleapis.com/css?family=Pirata+One" rel="stylesheet" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"  />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" />
     <link rel="stylesheet" type="text/css" href="Content/main.css" />
-    <link rel="shortcut icon" href="http://pngimages.net/sites/default/files/h--letter-png-image-68690.png" />
+    <link rel="shortcut icon" href="Content/hFaviconsml.png" />
 </head>
+
 <body>
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
@@ -19,7 +20,8 @@
                 <ContentTemplate>
                     <header id="navigation">
                         <asp:Button ID="startButton" CssClass="allButton" runat="server" Text="Start" OnClick="startButton_Click" />
-                        <asp:Button ID="aboutButton" CssClass="allButton" runat="server" Text="About" OnClick="aboutButton_Click" />
+                        <asp:Button ID="aboutButton" CssClass="allButton" runat="server" Text="About" />
+                        <ajaxtoolkit:modalpopupextender id="mpe" runat="server" targetcontrolid="aboutButton" popupcontrolid="Panel3" okcontrolid="closeAboutButton" />
                         <asp:Button ID="quitButton" CssClass="allButton" runat="server" Text="Quit" OnClick="Quit_Click" />
                         <asp:DropDownList ID="catSelector" runat="server">
                             <asp:ListItem>Select a category:</asp:ListItem>
@@ -34,18 +36,23 @@
                     <asp:Panel ID="errorPanel" runat="server" Visible="False">
                         <asp:Label ID="errorDisplay" runat="server" Text=""></asp:Label>
                     </asp:Panel>
-                    <asp:Panel ID="Panel3" runat="server" Visible="False">
+
+                    <asp:Panel ID="Panel3" runat="server">
+
                         <h2>About this project</h2>
-                        <p>This is a classic Hangman game built to demonstrate understanding of ASP.NET Webforms, HTML, C# & CSS.</p>
+                        <p>This is a classic Hangman game built to demonstrate understanding of ASP.NET Webforms, HTML, C# and CSS.</p>
                         <p>To play the game:</p>
                         <ul>
-                            <li>Choose a category and click start!</li>
+                            <li>Choose a category and click Start!</li>
                             <li>Guess a letter and click the button to see if you are right.</li>
-                            <li>You can guess 5 incorrect letters before you lose.</li>
-                            <li>If you're struggling click the hint button to get some help.</li>
-                            <li>Click the quit button to give up.</li>
+                            <li>If you guess 5 incorrect letters you lose.</li>
+                            <li>Please enter letters only, there are no numbers or punctuation.</li>
+                            <li>If you're struggling click the Hint button to get some help.</li>
+                            <li>Click the Quit button to give up.</li>
                         </ul>
-                        <asp:Button ID="closeAboutButton" runat="server" CssClass="allButton" Text="Close" OnClick="closeAboutButton_Click" /><br />
+                        <asp:Button ID="closeAboutButton" runat="server" CssClass="allButton" Text="Close" />
+
+                        <br />
                         <br />
                         <footer>Copyright &#169; Archibald Owen 2018 </footer>
                         <br />
@@ -102,14 +109,15 @@
                         </div>
                         <div>
                             <ul id="guessResponseC">
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" EnableClientScript="False" ErrorMessage="Only Letters Allowed," ControlToValidate="guess" Display="Static" ValidationExpression="^[A-Za-z]*$"></asp:RegularExpressionValidator>
                                 <asp:Label ID="guessResponse" runat="server" Text=" "></asp:Label>
                                 <asp:Button ID="hintButton" CssClass="allButton" runat="server" Text="Hint" OnClick="hintButton_Click" Visible="False" />
                             </ul>
                         </div>
-                       
+
                         <div>
-                            <ul id="guessedLettersC" >
-                                <asp:Label ID="guessedLettersTitle" runat="server" Text="Incorrect Letters: " visible="false"></asp:Label>
+                            <ul id="guessedLettersC">
+                                <asp:Label ID="guessedLettersTitle" runat="server" Text="Incorrect Guesses: " Visible="false"></asp:Label>
                                 <asp:Label ID="guessedLetters" runat="server" Text=""></asp:Label>
                             </ul>
                         </div>

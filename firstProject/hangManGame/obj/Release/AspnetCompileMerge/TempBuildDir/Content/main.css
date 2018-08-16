@@ -121,11 +121,12 @@ body {
 }
 
 #Panel3 {
-    margin: 0 5%;
-    background-color: rgba(102, 116, 103, 0.5);
+    background-color: rgb(102, 116, 103);
     color: rgb(246, 241, 237);
-    padding-top: 6vh;
-    padding-left: 1vw;
+    padding-top: 4vh;
+    padding-left: 2vw;
+    width: 1020px;
+    border-radius: 5px;
   }
 
 #closeAboutButton {
